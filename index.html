@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Abhinav's Portfolio</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <!-- Custom Fonts -->
+  <link href="https://api.fontshare.com/v2/css?f[]=satoshi@900,700,500,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.cdnfonts.com/css/mayonies" rel="stylesheet">
+  <!-- Add Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Add Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <!-- Add Typed.js for typing animation -->
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+  <!-- Add GSAP for animations -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.0/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.0/ScrollTrigger.min.js"></script>
+  <!-- Add Framer Motion for React-inspired animations -->
+  <script src="https://unpkg.com/framer-motion@10.16.4/dist/framer-motion.js"></script>
+</head>
+
+<body>
+  <!-- Dynamic Island style notification -->
+  <div id="copy-notification">
+    <div class="notification-content">
+      <div class="notification-icon">
+        <div class="pulse-ring"></div>
+        <i class="fas fa-check"></i>
+      </div>
+      <div class="notification-text">Email copied to clipboard!</div>
+    </div>
+  </div>
+  
+  <!-- Loader -->
+  <div class="loader" id="loader">
+    <div class="loader-content">
+      <div class="loader-logo">
+        <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="50" cy="50" r="30" stroke="#CCF381" stroke-width="4" />
+          <path d="M50 20L90 50L50 80L10 50L50 20Z" stroke="#4831D4" stroke-width="4" />
+        </svg>
+      </div>
+      <div class="loader-progress">
+        <div class="loader-progress-bar" id="progressBar"></div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Logo Animation -->
+  <div class="logo-animation" id="logoAnimation">
+    <h1 class="logo-text">
+      <span>A</span>
+      <span>B</span>
+      <span>H</span>
+      <span>I</span>
+    </h1>
+    <p class="tagline">Crafting Digital Experiences | Computer Science Engineering Student</p>
+  </div>
+  
+  <!-- Custom Cursor -->
+  <div class="custom-cursor" id="cursor"></div>
+  <div class="cursor-follower" id="cursorFollower"></div>
+  
+  <!-- Scroll Progress Indicator -->
+  <div class="scroll-indicator" id="scrollIndicator"></div>
+  
+  <!-- Back to Top Button -->
+  <div class="back-to-top" id="backToTop">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M12 19V5M12 5L5 12M12 5L19 12" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+    </svg>
+  </div>
+  
+  <!-- Background Animation -->
+  <!-- <div class="background-animation" id="backgroundCanvas"></div> -->
+  
+  <!-- Navbar -->
+  <nav class="navbar" id="navbar">
+    <a href="#" class="navbar-logo" data-text="ABHI">ABHI</a>
+    <div class="navbar-links">
+      <a href="#hero">Home</a>
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+  
+  <!-- Hero Section - Text Only -->
+  <section class="hero" id="hero">
+    <!-- Interactive Technology Background -->
+    <div class="tech-background" id="techBackground"></div>
+    
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-10 text-center hero-content">
+          <h1 class="animate-text">Hi, I'm <span class="gradient-text">Gangishetty Abhinav</span></h1>
+          <p class="animate-text-delay"><span id="typed-text"></span></p>
+          <div class="d-flex justify-content-center gap-3 animate-text-delay-2">
+            <a href="#projects" class="btn-custom">View My Work</a>
+            <a href="#contact" class="btn-custom">Get In Touch</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- About Section with Bento Box -->
+  <section class="section" id="about">
+    <div class="container">
+      <h2 class="text-center gradient-text mb-5">About Me</h2>
+      
+      <div class="bento-grid">
+        <!-- Photo - Left Side -->
+        <div class="bento-item photo-item reveal-left">
+          <div class="about-image-wrapper">
+            <img src="images/about.jpg" alt="Gangishetty Abhinav" class="img-fluid rounded-4" />
+            <div class="image-overlay">
+              <span class="overlay-text">ABHI</span>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Who I Am - Right Side Top -->
+        <div class="bento-item who-item reveal-right">
+          <h3 class="gradient-text">Who I Am</h3>
+          <p>I'm a passionate Computer Science Engineering student with a keen interest in technology and innovation. I love to explore new technologies and apply them to solve real-world problems.</p>
+          <p>Currently pursuing my degree in CSE, I'm focused on building a strong foundation in both theoretical concepts and practical applications.</p>
+          <p class="personal-note mt-2">"Turning ideas into reality, one line of code at a time..."</p>
+          <div class="mt-3">
+            <a href="#contact" class="btn-custom btn-sm">Contact Me</a>
+          </div>
+        </div>
+        
+        <!-- Education - Right Side Middle -->
+        <div class="bento-item edu-item reveal-up" data-delay="0.1">
+          <h3 class="gradient-text">Education</h3>
+          <div class="education-card">
+            <div class="education-year">2023 - 2027</div>
+            <div class="education-degree">B.Tech in Computer Science Engineering</div>
+            <div class="education-school">Siddhartha Institute of Technology and Science</div>
+          </div>
+          <div class="education-card mt-3">
+            <div class="education-year">2021 - 2023</div>
+            <div class="education-degree">Higher Secondary Education</div>
+            <div class="education-school">ABV Junior College of Intermediate</div>
+          </div>
+        </div>
+        
+        <!-- Interests - Right Side Bottom -->
+        <div class="bento-item interests-item reveal-up" data-delay="0.2">
+          <h3 class="gradient-text">Interests & Skills</h3>
+          <div class="d-flex flex-wrap gap-2">
+            <span class="skill-pill"><i class="fas fa-book"></i> Books</span>
+            <span class="skill-pill"><i class="fas fa-gamepad"></i> Games</span>
+            <span class="skill-pill"><i class="fas fa-running"></i> Sports</span>
+            <span class="skill-pill"><i class="fas fa-laptop-code"></i> Coding</span>
+            <span class="skill-pill"><i class="fas fa-code"></i> Web Development</span>
+            <span class="skill-pill"><i class="fas fa-brain"></i> AI/ML</span>
+            <span class="skill-pill"><i class="fas fa-mobile-alt"></i> Mobile App Dev</span>
+            <span class="skill-pill"><i class="fas fa-robot"></i> Robotics</span>
+          </div>
+        </div>
+        
+        <!-- Download CV Button -->
+        <div class="bento-item cv-item reveal-up" data-delay="0.3">
+          <div class="d-flex align-items-center justify-content-between">
+            <div>
+              <h3 class="gradient-text m-0">My Resume</h3>
+              <p class="mb-0">Download my complete CV</p>
+            </div>
+            <a href="#" class="btn-custom">Download CV</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Projects Section -->
+  <section class="section projects-section" id="projects">
+    <div class="projects-bg"></div>
+    <div class="container">
+      <h2 class="text-center gradient-text mb-5">Featured Projects</h2>
+      
+      <div class="row g-4">
+        <!-- Project Card 1 -->
+        <div class="col-lg-6 col-md-6" data-aos="fade-up">
+          <div class="project-card-new">
+            <div class="project-image-container">
+              <img src="https://via.placeholder.com/800x400" alt="Project 1" />
+              <div class="project-overlay">
+                <div class="project-buttons">
+                  <a href="#" class="project-btn"><i class="fas fa-external-link-alt"></i></a>
+                  <a href="#" class="project-btn"><i class="fab fa-github"></i></a>
+                </div>
+              </div>
+            </div>
+            <div class="project-details">
+              <h3>E-Commerce Platform</h3>
+              <p>A full-featured e-commerce platform with React, Node.js, and MongoDB. Includes user authentication, product management, cart functionality, and payment integration.</p>
+              <div class="project-tech">
+                <span class="tech-tag">React</span>
+                <span class="tech-tag">Node.js</span>
+                <span class="tech-tag">MongoDB</span>
+                <span class="tech-tag">Stripe</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Project Card 2 -->
+        <div class="col-lg-6 col-md-6" data-aos="fade-up" data-aos-delay="100">
+          <div class="project-card-new">
+            <div class="project-image-container">
+              <img src="https://via.placeholder.com/800x400" alt="Project 2" />
+              <div class="project-overlay">
+                <div class="project-buttons">
+                  <a href="#" class="project-btn"><i class="fas fa-external-link-alt"></i></a>
+                  <a href="#" class="project-btn"><i class="fab fa-github"></i></a>
+                </div>
+              </div>
+            </div>
+            <div class="project-details">
+              <h3>AI Dashboard</h3>
+              <p>An analytics dashboard with data visualization using D3.js and real-time updates via WebSockets. Features intuitive controls and responsive design.</p>
+              <div class="project-tech">
+                <span class="tech-tag">Vue.js</span>
+                <span class="tech-tag">D3.js</span>
+                <span class="tech-tag">WebSockets</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Project Card 3 -->
+        <div class="col-lg-6 col-md-6" data-aos="fade-up" data-aos-delay="200">
+          <div class="project-card-new">
+            <div class="project-image-container">
+              <img src="https://via.placeholder.com/800x400" alt="Project 3" />
+              <div class="project-overlay">
+                <div class="project-buttons">
+                  <a href="#" class="project-btn"><i class="fas fa-external-link-alt"></i></a>
+                  <a href="#" class="project-btn"><i class="fab fa-github"></i></a>
+                </div>
+              </div>
+            </div>
+            <div class="project-details">
+              <h3>Weather App</h3>
+              <p>A weather application with geolocation and animated forecasts. Provides detailed weather information with beautiful visualizations.</p>
+              <div class="project-tech">
+                <span class="tech-tag">React</span>
+                <span class="tech-tag">API</span>
+                <span class="tech-tag">CSS Animation</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Project Card 4 -->
+        <div class="col-lg-6 col-md-6" data-aos="fade-up" data-aos-delay="300">
+          <div class="project-card-new">
+            <div class="project-image-container">
+              <img src="https://via.placeholder.com/800x400" alt="Project 4" />
+              <div class="project-overlay">
+                <div class="project-buttons">
+                  <a href="#" class="project-btn"><i class="fas fa-external-link-alt"></i></a>
+                  <a href="#" class="project-btn"><i class="fab fa-github"></i></a>
+                </div>
+              </div>
+            </div>
+            <div class="project-details">
+              <h3>Social Media App</h3>
+              <p>A social networking platform with real-time chat functionality. Features user profiles, friend connections, and interactive posts.</p>
+              <div class="project-tech">
+                <span class="tech-tag">Next.js</span>
+                <span class="tech-tag">Firebase</span>
+                <span class="tech-tag">Socket.io</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="text-center mt-5">
+        <a href="#" class="btn-custom">View All Projects <i class="fas fa-arrow-right ms-2"></i></a>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Skills Section -->
+  <section class="section skills-section" id="skills">
+    <div class="skills-bg"></div>
+    <div class="code-rain" id="codeRain"></div>
+    
+    <div class="container">
+      <h2 class="text-center gradient-text mb-5">Technical Skills</h2>
+      
+      <div class="category-title">My Tech Stack</div>
+      
+      <div class="skills-grid">
+        <!-- Programming Languages -->
+        <div class="skill-item skill-c">
+          <div class="skill-icon">
+            <div class="skill-front">
+              <i class="fab fa-cuttlefish"></i>
+            </div>
+            <div class="skill-back">
+              <h4>C</h4>
+              <div class="skill-bar">
+                <div class="skill-progress" style="width: 85%"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="skill-item skill-java">
+          <div class="skill-icon">
+            <div class="skill-front">
+              <i class="fab fa-java"></i>
+            </div>
+            <div class="skill-back">
+              <h4>Java</h4>
+              <div class="skill-bar">
+                <div class="skill-progress" style="width: 80%"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="skill-item skill-python">
+          <div class="skill-icon">
+            <div class="skill-front">
+              <i class="fab fa-python"></i>
+            </div>
+            <div class="skill-back">
+              <h4>Python</h4>
+              <div class="skill-bar">
+                <div class="skill-progress" style="width: 90%"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="skill-item skill-html">
+          <div class="skill-icon">
+            <div class="skill-front">
+              <i class="fab fa-html5"></i>
+            </div>
+            <div class="skill-back">
+              <h4>HTML5</h4>
+              <div class="skill-bar">
+                <div class="skill-progress" style="width: 95%"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="skill-item skill-css">
+          <div class="skill-icon">
+            <div class="skill-front">
+              <i class="fab fa-css3-alt"></i>
+            </div>
+            <div class="skill-back">
+              <h4>CSS3</h4>
+              <div class="skill-bar">
+                <div class="skill-progress" style="width: 90%"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="skill-item skill-js">
+          <div class="skill-icon">
+            <div class="skill-front">
+              <i class="fab fa-js"></i>
+            </div>
+            <div class="skill-back">
+              <h4>JavaScript</h4>
+              <div class="skill-bar">
+                <div class="skill-progress" style="width: 92%"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="skill-item skill-react">
+          <div class="skill-icon">
+            <div class="skill-front">
+              <i class="fab fa-react"></i>
+            </div>
+            <div class="skill-back">
+              <h4>React</h4>
+              <div class="skill-bar">
+                <div class="skill-progress" style="width: 88%"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="skill-item skill-node">
+          <div class="skill-icon">
+            <div class="skill-front">
+              <i class="fab fa-node-js"></i>
+            </div>
+            <div class="skill-back">
+              <h4>Node.js</h4>
+              <div class="skill-bar">
+                <div class="skill-progress" style="width: 85%"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="skill-item skill-git">
+          <div class="skill-icon">
+            <div class="skill-front">
+              <i class="fab fa-git-alt"></i>
+            </div>
+            <div class="skill-back">
+              <h4>Git</h4>
+              <div class="skill-bar">
+                <div class="skill-progress" style="width: 88%"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="skill-item skill-github">
+          <div class="skill-icon">
+            <div class="skill-front">
+              <i class="fab fa-github"></i>
+            </div>
+            <div class="skill-back">
+              <h4>GitHub</h4>
+              <div class="skill-bar">
+                <div class="skill-progress" style="width: 90%"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="skill-item skill-mongodb">
+          <div class="skill-icon">
+            <div class="skill-front">
+              <i class="fas fa-database"></i>
+            </div>
+            <div class="skill-back">
+              <h4>MongoDB</h4>
+              <div class="skill-bar">
+                <div class="skill-progress" style="width: 82%"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="skill-item skill-vscode">
+          <div class="skill-icon">
+            <div class="skill-front">
+              <i class="fas fa-code-branch"></i>
+            </div>
+            <div class="skill-back">
+              <h4>VS Code</h4>
+              <div class="skill-bar">
+                <div class="skill-progress" style="width: 95%"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="floating-icons" id="floatingIcons"></div>
+  </section>
+  
+  <!-- Contact Section -->
+  <section class="section" id="contact">
+    <div class="container">
+      <h2 class="text-center gradient-text mb-5">Get In Touch</h2>
+      
+      <div class="bento-grid contact-grid">
+        <!-- Email Bento Item - Hidden Email -->
+        <div class="bento-item contact-email-item reveal-left">
+          <div class="contact-content">
+            <h3 class="gradient-text">Let's Connect</h3>
+            <p>Feel free to reach out for any project or collaboration opportunities. I'm always open to discussing new ideas and ventures.</p>
+            
+            <div class="contact-email-box">
+              <div id="email-hidden" class="active">
+                <button id="reveal-email" class="contact-btn">
+                  <i class="fas fa-envelope me-2"></i>Show Email
+                </button>
+              </div>
+              <div id="email-revealed">
+                <span id="email-text">abhinav.gangishetty@example.com</span>
+                <button id="copy-email" class="contact-btn-sm">
+                  <i class="fas fa-copy"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Hire Me Bento Item -->
+        <div class="bento-item contact-hire-item reveal-right">
+          <div class="contact-content">
+            <h3 class="gradient-text">Hire Me</h3>
+            <p>Looking for a passionate developer for your next project? I'm currently available for freelance work and open to new opportunities.</p>
+            
+            <div class="hire-me-actions">
+              <a href="#" class="contact-btn">
+                <i class="fas fa-briefcase me-2"></i>View Resume
+              </a>
+              <div class="availability-tag">
+                <span class="status-indicator"></span>
+                <span>Available for projects</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Social Media Bento Item -->
+        <div class="bento-item contact-social-item reveal-up" data-delay="0.1">
+          <div class="contact-content">
+            <h3 class="gradient-text">Social Profiles</h3>
+            <p>Connect with me on social media to follow my journey and stay updated with my latest projects and tech adventures.</p>
+            
+            <div class="social-icons">
+              <a href="#" class="social-icon" aria-label="LinkedIn" title="LinkedIn">
+                <i class="fab fa-linkedin-in" style="visibility: visible; opacity: 1;"></i>
+              </a>
+              <a href="#" class="social-icon" aria-label="GitHub" title="GitHub">
+                <i class="fab fa-github" style="visibility: visible; opacity: 1;"></i>
+              </a>
+              <a href="#" class="social-icon" aria-label="Twitter" title="Twitter">
+                <i class="fab fa-twitter" style="visibility: visible; opacity: 1;"></i>
+              </a>
+              <a href="#" class="social-icon" aria-label="Instagram" title="Instagram">
+                <i class="fab fa-instagram" style="visibility: visible; opacity: 1;"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Location Bento Item - Original 3D Globe -->
+        <div class="bento-item contact-location-item reveal-up" data-delay="0.2">
+          <div class="contact-content">
+            <h3 class="gradient-text">Location</h3>
+            <div class="location-info">
+              <div class="location-icon-container">
+                <div class="globe-effect"></div>
+                <i class="fas fa-map-marker-alt location-icon"></i>
+              </div>
+              <div class="location-details">
+                <h4>Hyderabad, India</h4>
+                <p>Available for remote work worldwide and local opportunities in Hyderabad region.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Footer -->
+  <footer class="py-4 bg-dark footer-section">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-md-6 text-center text-md-start">
+          <p class="text-muted mb-0" id="current-datetime"></p>
+        </div>
+        <div class="col-md-6 text-center text-md-end">
+          <p class="text-muted mb-0">© <span id="current-year"></span> Made with <span class="heart-icon">❤</span> by <span class="signature-text">Gangishetty Abhinav</span></p>
+        </div>
+      </div>
+    </div>
+  </footer>
+  
+  <!-- Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
